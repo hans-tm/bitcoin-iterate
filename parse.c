@@ -158,6 +158,7 @@ void read_bitcoin_transaction(struct space *space,
 	off_t hash_start = *poff;
 	SHA256_CTX sha256;
 	bool segwit = false;
+	bool auxpow = false;
 
 	SHA256_Init(&sha256);
 
