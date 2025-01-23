@@ -171,19 +171,19 @@ void read_bitcoin_transaction(struct space *space,
 
 
 	/* See BIP 144 */
-/*	if (trans->input_count == 0) {
+	if (trans->input_count == 0) {
 		u8 flag;
 		segwit = true;
 
 		flag = pull_u8(f, poff);
 		if (flag != 1)
-			errx(1, "Unknown BIP144 flag %u", flag);
+			err(1, "Unknown BIP144 flag %u", flag);
 
 		/* Skip over for txid */
-/*		hash_start = *poff;
+		hash_start = *poff;
 		trans->input_count = pull_varint(f, poff);
 	}
-*/
+
 	trans->input = space_alloc_arr(space,
 				       struct bitcoin_transaction_input,
 				       trans->input_count);
