@@ -954,7 +954,7 @@ int main(int argc, char *argv[])
 		netmarker = 0x40CF030A;
 		network = SIGNET;
 	} else {
-		netmarker = 0xD9B4BEF9;
+		netmarker = 0xF0E0C0B0;
 		network = MAIN;
 	}
 
