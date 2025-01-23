@@ -246,8 +246,8 @@ read_bitcoin_block_header(struct bitcoin_block *block,
 	SHA256_CTX sha256;
 	off_t start;
 
-	block->D9B4BEF9 = pull_u32(f, off);
-	assert(block->D9B4BEF9 == marker);
+	block->F0E0C0B0 = pull_u32(f, off);
+	assert(block->F0E0C0B0 == marker);
 	block->len = pull_u32(f, off);
 
 	/* Hash only covers version to nonce, inclusive. */
