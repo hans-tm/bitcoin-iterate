@@ -36,7 +36,7 @@ char **block_filenames(tal_t *ctx, const char *path, enum networks network){
 			base = passwd->pw_dir;
 		}
 
-		base = path_join(tmp_ctx, base, ".bitcoin");
+		base = path_join(tmp_ctx, base, ".shibacoin");
 		if (network == TESTNET3)
 			base = path_join(tmp_ctx, base, "testnet3");
 		if (network == REGTEST)
@@ -44,11 +44,11 @@ char **block_filenames(tal_t *ctx, const char *path, enum networks network){
 		if (network == SIGNET)
 			base = path_join(tmp_ctx, base, "signet");
 
-		/* First try new-style: $HOME/.bitcoin/blocks/blk[0-9]*.dat. */
+		/* First try new-style: $HOME/.shibacoin/blocks/blk[0-9]*.dat. */
 		path = path_join(tmp_ctx, base, "blocks");
 		dir = opendir(path);
 		if (!dir) {
-			/* Old-style: $HOME/.bitcoin/blk[0-9]*.dat. */
+			/* Old-style: $HOME/.shibacoin/blk[0-9]*.dat. */
 			path = base;
 			dir = opendir(path);
 		}
@@ -56,7 +56,7 @@ char **block_filenames(tal_t *ctx, const char *path, enum networks network){
 		dir = opendir(path);
 
 	if (!dir)
-		err(1, "Could not open bitcoin dir '%s'", path);
+		err(1, "Could not open shibacoin dir '%s'", path);
 
 	while ((ent = readdir(dir)) != NULL) {
 		char *numstr;

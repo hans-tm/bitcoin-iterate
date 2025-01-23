@@ -8,7 +8,7 @@
 
 /* These are little endian on disk. */
 struct bitcoin_block {
-	u32 D9B4BEF9;
+	u32 F0E0C0B0;
 	u32 len;
 	u32 version;
 	u8 prev_hash[32];
