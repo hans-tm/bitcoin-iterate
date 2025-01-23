@@ -173,7 +173,7 @@ void read_bitcoin_transaction(struct space *space,
 	/* See BIP 144 */
 	if (trans->input_count == 0) {
 		u8 flag;
-		segwit = true;
+//		segwit = true;
 
 		flag = pull_u8(f, poff);
 		if (flag != 1)
